@@ -1,0 +1,116 @@
+<div class="grid grid-cols-2 gap-1 relative ">
+    <div class="max-w-sm absolute cuadro top-14 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-5">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ingreso Aprendices</h5>
+        </div>
+    </div>
+<form [formGroup]="form" (ngSubmit)="agregarAprendiz()"  class="absolute top-56 left-10 w-1/4 ">
+    <div class="relative z-0 w-full mb-6 group"  >
+        <input type="text" formControlName="documento" name="documento"  maxlength="10" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none  focus:ring-0 focus:border-blue-600 peer"   >
+        <label for="documento" [class.green-icon]="this.form.get('documento')?.valid" [class.red-icon]="this.form.get('documento')?.invalid && this.form.get('documento')?.touched"    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Documento</label>
+    
+    </div>
+    <div class="relative z-0 w-full mb-6 group">
+        <input type="text" formControlName="nombres" name="nombres"  id="nombres" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+        <label for="nombres" [class.green-icon]="this.form.get('nombres')?.valid"  [class.red-icon]="this.form.get('nombres')?.invalid && this.form.get('nombres')?.touched"class="peer-focus:font-medium  absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombres</label>
+    </div>
+    <div class="relative z-0 w-full mb-6 group">
+        <input type="text" formControlName="apellidos" name="apellidos" id="apellidos" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" >
+        <label [class.green-icon]="this.form.get('apellidos')?.valid"  [class.red-icon]="this.form.get('apellidos')?.invalid && this.form.get('apellidos')?.touched" for="apellidos" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Apellidos</label>
+    </div>
+    <div class="grid xl:grid-cols-2 xl:gap-6">
+      <div class="relative z-0 w-full mb-6 group">
+          <input type="text" name="email" formControlName="email" id="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" >
+          <label for="email" [class.green-icon]="this.form.get('email')?.valid"  [class.red-icon]="this.form.get('email')?.invalid && this.form.get('email')?.touched" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+          <input type="text" name="celular" formControlName="celular" maxlength="10" id="celular" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" >
+          <label for="celular " [class.green-icon]="this.form.get('celular')?.valid"  [class.red-icon]="this.form.get('celular')?.invalid && this.form.get('celular')?.touched" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Celular</label>
+      </div>
+    </div>
+    <div class="grid xl:grid-cols-2 xl:gap-6">
+      <div class="relative z-0 w-full mb-6 group">
+          <input type="text" formControlName="programa"  name="programa" id="programa" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" >
+          <label for="programa"   [class.green-icon]="this.form.get('programa')?.valid"  [class.red-icon]="this.form.get('programa')?.invalid && this.form.get('programa')?.touched" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Programa</label>
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+          <input type="text" name="jornada" formControlName="jornada"  id="jornada" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+          <label for="jornada" [class.green-icon]="this.form.get('jornada')?.valid"  [class.red-icon]="this.form.get('jornada')?.invalid && this.form.get('jornada')?.touched" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Jornada</label>
+      </div>
+    </div>
+    <button type="submit" [disabled]="this.form.invalid" class="text-white bg-slate-900 hover:bg-slate-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800">Submit</button>
+  </form>
+  
+<div class="relative lefft    shadow-md sm:rounded-lg top-64">
+    <table class=" text-sm text-left text-gray-500  dark:text-gray-400">
+        <thead class="text-xs  text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-3 py-3">
+                    Documento
+                </th>
+                <th scope="col" class="px-3 py-3">
+                    Nombres
+                </th>
+                <th scope="col" class="px-3 py-3">
+                    Apellidos
+                </th>
+                <th scope="col" class="px-3 py-3">
+                    Email
+                </th>
+                <th scope="col" class="px-3 py-3">
+                    Celular
+                </th>
+                <th scope="col" class="px-3 py-3">
+                    Programa
+                </th>
+                <th scope="col" class="px-3 py-3">
+                    Jornada
+                </th>
+                <th scope="col" class="px-3 py-3">
+                    Editar
+                </th>
+                <th scope="col" class="px-3 py-3">
+                    Eliminar
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let aprendiz of listarAprendices" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" class="px-3 py-3 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                    {{aprendiz.documento}}
+                </th>
+                <td class="px-3 py-3">
+                    {{aprendiz.nombres}}
+                </td>
+                <td class="px-3 py-3">
+                    {{aprendiz.apellidos}}
+                </td>
+                <td class="px-3 py-3">
+                    {{aprendiz.email}}
+                </td>
+                <td class="px-3 py-3">
+                    {{aprendiz.celular}}
+                </td>
+                <td class="px-3 py-3">
+                    {{aprendiz.programa}}
+                </td>
+                <td class="px-3 py-3">
+                    {{aprendiz.jornada}}
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a (click)="editarAprendiz(aprendiz)" class="font-medium text-green-600 dark:text-green-500 hover:underline">Edit</a>
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a  (click)="elimininarAprendiz(aprendiz.id)" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                </td>
+            </tr>
+            
+          
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+
+  
