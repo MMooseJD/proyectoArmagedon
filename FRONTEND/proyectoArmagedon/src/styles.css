@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: #1e293b;
+}
+.lefft{
+    left: 60%;
+}
+.cuadro{
+    left: 40%;
+}
+
